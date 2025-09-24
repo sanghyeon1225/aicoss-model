@@ -19,6 +19,8 @@ from tensorflow.keras.models import Sequential
 
 
 
+# 랜덤시드를 seed로 고정
+
 def reset_random_seeds(seed):
     """
     재현 가능한 실험을 위한 모든 랜덤 시드 고정
@@ -32,6 +34,7 @@ def reset_random_seeds(seed):
 
 
 def main():
+
     """
     임상 데이터 기반 알츠하이머병 분류 모델의 훈련 및 평가
     5-fold 교차검증으로 모델 성능의 안정성 측정
