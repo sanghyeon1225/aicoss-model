@@ -1,21 +1,9 @@
-MIT License
+MIT 라이선스
 
 Copyright (c) 2023 Singh Lab @ Brown
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+이 소프트웨어 및 관련 문서 파일(이하 "소프트웨어")의 사본을 취득하는 모든 사람에게 다음과 같은 권한을 무상으로 부여합니다. 여기에는 소프트웨어의 사본을 사용, 복제, 수정, 병합, 게시, 배포, 서브라이선스 및/또는 판매할 수 있는 권리를 포함하여, 소프트웨어를 어떠한 제한 없이 다룰 수 있는 권리가 포함됩니다. 또한, 소프트웨어를 제공받은 사람에게도 동일한 권리를 부여할 수 있도록 허용합니다. 단, 다음의 조건을 따라야 합니다.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+위의 저작권 고지 및 이 허가 고지는 소프트웨어의 모든 사본 또는 주요 부분에 포함되어야 합니다.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+소프트웨어는 상품성, 특정 목적에의 적합성 및 비침해성에 대한 보증을 포함하되 이에 국한되지 않는, 명시적이든 묵시적이든 어떠한 종류의 보증도 없이 '있는 그대로' 제공됩니다. 어떠한 경우에도 저자 또는 저작권자는 계약, 불법 행위 또는 기타 행위로 인해 발생했는지 여부와 관계없이, 소프트웨어 또는 소프트웨어의 사용 또는 기타 거래와 관련하여 발생하는 모든 청구, 손해 또는 기타 책임에 대해 책임을 지지 않습니다.
