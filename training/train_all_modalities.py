@@ -254,11 +254,14 @@ def train(mode, batch_size, epochs, learning_rate, seed):
     d_class_weights = dict(enumerate(class_weights))
     
     # compile model #
+    #여기서 모델 만들고
     model = multi_modal_model(mode, train_clinical, train_snp, train_img)
+    # 가중치 최적화는 adam으로 하고 loss는 crossentropy, metrics는 categorial_accuracy
     model.compile(optimizer=Adam(learning_rate = learning_rate), loss='sparse_categorical_crossentropy', metrics=['sparse_categorical_accuracy'])
     
 
     # summarize results
+    # 입력 넣고 정답지 넣고 클래스별 가중치나 등등 파라미터 넣고 학습
     history = model.fit([train_clinical,
                          train_snp,
                          train_img],
@@ -270,11 +273,17 @@ def train(mode, batch_size, epochs, learning_rate, seed):
                         verbose=1)
                         
                 
-
+    # 테스트 데이터로 평가
     score = model.evaluate([test_clinical, test_snp, test_img], test_label)
     
+    # 테스트 나온 accuracy 저장
     acc = score[1] 
+    
+    
+    #  test 데이터로 예측 저장
     test_predictions = model.predict([test_clinical, test_snp, test_img])
+    
+    # 이 예측을 바탕으로 precision, recall 등등 정확도 이외의 지표 구함
     cr, precision_d, recall_d, thres = calc_confusion_matrix(test_predictions, test_label, mode, learning_rate, batch_size, epochs)
     
     
@@ -323,11 +332,14 @@ if __name__=="__main__":
     
     m_a = {}
     seeds = random.sample(range(1, 200), 5)
+    
+    # 드랍아웃이 랜덤이라 운이 필요함 그래서 5번 해서 정확도 m_a에 정확도를 키로 각종 다른 것들을 저장
     for s in seeds:
         acc, bs_, lr_, e_ , seed= train('MM_SA_BA', 32, 50, 0.001, s)
         m_a[acc] = ('MM_SA_BA', acc, bs_, lr_, e_, seed)
     print(m_a)
     print ('-'*55)
+    #최대 정확도, 그떄 파라미터를 출력
     max_acc = max(m_a, key=float)
     print("Highest accuracy of: " + str(max_acc) + " with parameters: " + str(m_a[max_acc]))
     
