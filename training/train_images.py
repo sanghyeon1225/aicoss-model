@@ -58,6 +58,8 @@ def main():
     # 훈련용 정답 레이블 데이터를 불러옵니다.
     with open("img_y_train.pkl", "rb") as fh:
         data = pickle.load(fh)
+        df = pd.DataFrame(data)
+        print(df)
     # DataFrame으로 변환 후 'label' 컬럼을 추출하고, 이를 NumPy 배열로 변환합니다.
     y_train = np.array(pd.DataFrame(data)["label"].values.astype(np.float32)).flatten()
     
@@ -123,7 +125,7 @@ def main():
         model = Sequential()
         # 첫 번째 합성곱 층: 100개의 3x3 필터로 이미지의 특징(feature)을 추출합니다. 입력 이미지의 형태는 (72, 72, 3)입니다. -> 70*70*100 만든다.
         # relu는 활성화 함수 중 하나. Rectified Linear Unit으로 입력값이 0보다 작으면 0으로 만들고, 0보다 크면 입력값을 그대로 내보냅니다.
-        model.add(Conv2D(100, (3, 3),  activation='relu', input_shape=(72, 72, 3)))
+        model.add(Conv2D(100, (3, 3),  activation='relu', input_shape=(256, 256, 3)))
         # 맥스 풀링 층: 이미지의 크기를 절반으로 줄여(2x2) 중요한 특징만 강조하고 계산량을 줄입니다. -> 35*35*100 만든다.
         model.add(MaxPooling2D((2, 2)))
         # 드롭아웃 층: 훈련 중에 뉴런의 50%를 무작위로 비활성화하여 모델의 과적합(overfitting)을 방지합니다. (특징 맵(feature map)의 일부를 무작위로 0으로 만드는 방식)
